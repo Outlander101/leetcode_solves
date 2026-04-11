@@ -8,15 +8,15 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int num_len = nums.size();
-        if (num_len < 2) {
+        if (num_len < 2) { // vector size check
             return {};
         }
         vector<pair<int, int>> arr;
-        for (int i = 0; i < num_len; i++) 
+        for (int i = 0; i < num_len; i++) // create a new vector with pairs<int, int> {value, index}
             arr.push_back({nums[i], i});
-        sort(arr.begin(), arr.end());
+        sort(arr.begin(), arr.end()); // Sort the new vector pair
 
-        int left = 0, right = nums.size() - 1;
+        int left = 0, right = nums.size() - 1; // use sliding window approach
         while (left < right) {
             int sum = arr[left].first + arr[right].first;
             if (sum == target)
