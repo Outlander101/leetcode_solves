@@ -1,7 +1,7 @@
 #include<algorithm>
 #include<iostream>
-#include<vector>
 #include <unordered_map>
+#include<vector>
 
 using namespace std;
 
@@ -9,13 +9,13 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int num_len = nums.size();
-        if (num_len < 2) {
+        if (num_len < 2) { // vector size less than 2 check
             return {};
         }
-        unordered_map<int, int> num_map; // value -> index
+        unordered_map<int, int> num_map; // value -> index [hashmap]
         for (int i = 0; i < num_len; i++) {
             int complement = target - nums[i];
-            if (num_map.find(complement) != num_map.end())
+            if (num_map.find(complement) != num_map.end()) // if complement (value) is found in hashmap
                 return {num_map[complement], i};
             num_map[nums[i]] = i;
         }
