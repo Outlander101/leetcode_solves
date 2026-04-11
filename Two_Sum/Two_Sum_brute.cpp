@@ -7,12 +7,12 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int num_len = nums.size();
-        if (num_len < 2) {
+        if (num_len < 2) { // vector size check
             return {};
         }
         vector<int> result;
-        for(int outer = 0; outer < num_len - 1; outer++) {
-            for(int inner = 1; inner < num_len; inner++) {
+        for(int outer = 0; outer < num_len - 1; outer++) { // outer loop starts from 0 to vector size -1
+            for(int inner = 1; inner < num_len; inner++) { // inner loop starts from 1 to vector size
                 if (nums[outer] + nums[inner] == target) {
                     result.push_back(outer);
                     result.push_back(inner);
