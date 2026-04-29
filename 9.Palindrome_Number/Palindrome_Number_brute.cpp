@@ -1,0 +1,37 @@
+#include <algorithm>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if (x < 0)
+            return false;
+        string s = to_string(x);
+        string rev = s;
+        reverse(rev.begin(), rev.end());
+
+        return s == rev;
+
+    }
+};
+
+int main() {
+    Solution sol;
+    int x = 121;
+    if(sol.isPalindrome(x))
+        cout << x << " is palindrome.";
+    else
+        cout << x << " is not palindrome.";
+    return 0;
+}
+
+/*
+Convert integer -> string, compare with reverse
+
+Complexity
+Time: O(n)
+Space: O(n)
+*/
